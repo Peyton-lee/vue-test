@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Login from '@/components/Login'
-import Test from '@/components/Test'
+import Index from '@/pages/Index'
+import Default from '@/pages/Default'
 
 Vue.use(Router)
 
@@ -12,6 +13,7 @@ export default new Router({
     routes: [
         {
             path: '/',
+            redirect: '/login',
             name: 'Default',
             component: Login
     },
@@ -21,9 +23,13 @@ export default new Router({
             component: Login
     },
         {
-            path: '/test',
-            name: 'Test',
-            component: Test
+            path: '/index',
+            name: 'Index',
+            component: Index,
+            children:[{
+            	path:'default',
+            	component:Default
+            }]
     }
   ],
 

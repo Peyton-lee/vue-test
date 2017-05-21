@@ -13,7 +13,6 @@ export default {
   name: 'app',
   data () {
       return {
-          go: 'ggggg'
       }
   },
   computed: mapState([

@@ -50,7 +50,7 @@
                     const response = await (this.$HTTP.login(this.ruleForm.account, this.ruleForm.checkPass))
                     if (0 == response.data.code) {
                         this.loginAction(this.ruleForm.account)
-                        this.$router.push({ path: '/test' })
+                        this.$router.push({ path: '/index/default' })
                     }
                 } catch (err) {
                     if (err instanceof Error) {
@@ -75,17 +75,17 @@
 
 <style lang="scss" scoped>
   .login-container {
-    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
+    /*box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);*/
     -webkit-border-radius: 5px;
     border-radius: 5px;
     -moz-border-radius: 5px;
     background-clip: padding-box;
-    margin: 180px auto;
+    margin: 150px auto;
     width: 350px;
     padding: 35px 35px 15px 35px;
     background: #fff;
     border: 1px solid #eaeaea;
-    box-shadow: 0 0 25px #cac6c6;
+    /*box-shadow: 0 0 25px #cac6c6;*/
     .title {
       margin: 0px auto 40px auto;
       text-align: center;
