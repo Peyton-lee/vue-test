@@ -4,12 +4,14 @@ import Hello from '@/components/Hello'
 import Login from '@/components/Login'
 import Index from '@/pages/Index'
 import Default from '@/pages/Default'
+import Collection from '@/pages/Collection'
 
 Vue.use(Router)
 
 
 export default new Router({
     mode: 'history',
+    linkActiveClass: 'on',
     routes: [
         {
             path: '/',
@@ -27,8 +29,11 @@ export default new Router({
             name: 'Index',
             component: Index,
             children:[{
-            	path:'default',
-            	component:Default
+            	path: 'default',
+            	component: Default
+            }, {
+                path: 'collection',
+                component: Collection
             }]
     }
   ],

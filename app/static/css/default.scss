@@ -1,0 +1,50 @@
+// common
+.radius {
+	border-radius:3px;
+}
+.block {
+	display: block;
+}
+.overflow {
+	overflow: auto;
+}
+.pointer {
+	cursor: pointer;
+}
+.chuck_w {
+	@extend .radius-default;
+	background-color: $white;
+}
+
+
+// collection
+.collection {
+	.coll_header {
+		@extend .overflow;
+		.coll_nav {
+			@extend .block,.pointer;
+			@include float(left);
+			padding: 6px;
+			margin:0 10px 2px;
+			color: $color;
+			
+			&.on {
+				color: $black;
+				label {
+					font-weight: bold;
+				}
+				border-bottom: 2px solid $active;
+			}
+			label {
+				@extend .pointer;
+			}
+		}
+		margin-bottom: 10px;
+	}
+	.right_side {
+		.topicList li {
+			text-decoration: none;
+			margin-bottom: 3px;
+		}
+	}
+}

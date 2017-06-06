@@ -1,18 +1,10 @@
-//@import "./animate.css"
-//@import "./app.css"
-//@import "./common.css"
-//@import "./cover.css"
+// css
+@import '/static/fonts/css/font-awesome.min.css';
+@import '/static/css/animate.css';
+@import '/static/css/app.css';
+@import '/static/css/common.css';
+@import '/static/css/cover.css';
 
-body {
-    font-size: 50px;
-    background: red;
-}
-
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+// scss
+@import './params';
+@import './default';

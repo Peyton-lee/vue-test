@@ -160,6 +160,9 @@ ul li{
 .left_link a:hover{
     background-color: rgba(255,255,255,0.2);
 }
+.left_link a.on{
+    background: rgba(255,255,255,.2);
+}
 .left_line{
     height: 1px;
     background-color: rgba(255,255,255,0.1);

@@ -1,6 +1,6 @@
 <template>
   <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-position="left" label-width="0px" class="demo-ruleForm login-container">
-    <h3 class="title">系统登录</h3>
+    <h3 class="title">LOGIN IN</h3>
     <el-form-item prop="account">
       <el-input type="text" v-model="ruleForm.account" auto-complete="off" placeholder="账号" v-focus="focus"></el-input>
     </el-form-item>
@@ -16,33 +16,40 @@
 
 <script>
   import { mapActions } from 'vuex'
+    
   export default {
     data() {
       return {
         logining: false,
+          
         ruleForm: {
           account: '',
           checkPass: ''
         },
+          
         rules: {
           account: [
             { required: true, message: '请输入账号', trigger: 'blur' },
           ],
+            
           checkPass: [
             { required: true, message: '请输入密码', trigger: 'blur' },
           ]
         },
+          
         checked: true,
         focus: false
       };
     },
+      
     created() {
         this.focus = true
     },
+      
     methods: {
          login() {
             this.$refs.ruleForm.validate(async (valid) => {
-                if (!valid) 
+                if (!valid)
                     return
                 this.logining = true
                     

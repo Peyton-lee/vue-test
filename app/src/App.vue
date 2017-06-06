@@ -11,13 +11,16 @@
 import { mapState } from 'vuex'
 export default {
   name: 'app',
+    
   data () {
       return {
       }
   },
+    
   computed: mapState([
       'abc'
   ]),
+    
   mounted () {
 //      this.log("gg")
 //      console.log(this.$store.state.abc)
@@ -30,3 +33,7 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+    @import 'static/css/index';
+</style>
+

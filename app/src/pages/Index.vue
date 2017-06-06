@@ -1,12 +1,12 @@
 <template>
   <div v-on:click="searchBlur()">
     <Top v-bind:active.sync="active" v-bind:search_text.sync="search_text"></Top>
-	    <div class="main_content">
-	    	<div class="content relative">
-	    		<left></left>
-          <router-view></router-view>
-	    	</div>
-	    </div>
+    <div class="main_content">
+        <div class="content relative">
+            <left></left>
+            <router-view></router-view>
+        </div>
+    </div>
   </div>
 </template>
 
