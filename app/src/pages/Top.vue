@@ -24,13 +24,25 @@
                  <a href="#" class="pull-left">
                      <i class="fa fa-search-plus" aria-hidden="true"></i>发现
                  </a>
-                 <a href="#" class="pull-left">
-                     <i class="fa fa-gamepad" aria-hidden="true"></i>游戏
-                 </a>
              </div>
              <div class="sign pull-left">
                  <div class="sign_up pull-left pointer">注册</div>
-                 <div class="sign_in pull-left pointer">登录</div>
+                 <div class="sign_in pull-left pointer">{{GET_USER_INFO.name}}</div>
+             </div>
+             <div class="pull-right pointer relative" id="loginOut" @mouseenter="setup=true" @mouseleave="setup=false">
+                 <i class="fa fa-cog font-20" aria-hidden="true"></i>
+                 <transition name="fade">
+                 <div class="setUp absolute font-12 radius-default" v-if="setup">
+                     <ul>
+                         <li><a href="">账号设置</a></li>
+                         <li><a href="">会员中心</a></li>
+                         <li><a href="">账号安全</a></li>
+                         <li><a href="">帮助中心</a></li>
+                         <li><a href="javascript:;" @click="loginOut">退出登录</a></li>
+                     </ul>
+                     <div class="W_layer_top"><em></em></div>
+                 </div>
+                 </transition>
              </div>
          </div>
          <!------------- 导航 end ------------->
@@ -38,32 +50,48 @@
   </div>
 </template>
 
-
 <script>
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'top',
   data () {
     return {
       msg: ['第一行', '第二行', '第三行', '第四行'],
-      search: ['新杰狗+大杰狗', '蓝瘦香菇哥结婚', '有人越看越好看', '范冰冰爸爸', '女白领被安排相亲水泥工']
+      search: ['新杰狗+大杰狗', '蓝瘦香菇哥结婚', '有人越看越好看', '范冰冰爸爸', '女白领被安排相亲水泥工'],
+      setup: false
     }
   },
+    
   props: ['active', 'search_text'],
+    
   mounted () {
     this.$parent.searchMax = this.search[0]
     this.$parent.searchDom = document.querySelector('#search')
   },
+    
+  computed: {
+      ...mapGetters([
+          'GET_USER_INFO'
+      ])
+  },
+    
   methods: {
     getTop (data) {
       return '大家都在搜：' + data
     },
+      
     focus (dom, data) {
       dom.currentTarget.setAttribute('placeholder', data)
       this.$parent.active = true
     },
+      
     addText (data) {
       this.$parent.search_text = data
       this.$parent.active = false
+    },
+    
+    loginOut () {
+        this.$router.push({ path: '/login' })
     }
   }
 }

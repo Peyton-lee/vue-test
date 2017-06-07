@@ -8,7 +8,6 @@ import Collection from '@/pages/Collection'
 
 Vue.use(Router)
 
-
 export default new Router({
     mode: 'history',
     linkActiveClass: 'on',
@@ -28,20 +27,31 @@ export default new Router({
             path: '/index',
             name: 'Index',
             component: Index,
-            children:[{
-            	path: 'default',
-            	component: Default
+            children: [{
+                path: 'default',
+                component: Default
             }, {
                 path: 'collection',
                 component: Collection
             }]
-    }
-  ],
+       }
+   ],
 
     beforeEach: transition => {
+        console.log(transition)
         let vm = transition.to.router.app.$root
         if (vm.isLogin) {
             transition.next()
         } else {}
+    },
+
+    // 滚动条滚回顶部
+    scrollBehavior(to, from, savedPosition) {
+        if (to.path.indexOf("index")) {
+            return {
+                x: 0,
+                y: 0
+            }
+        }
     }
 })

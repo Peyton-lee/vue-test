@@ -1,1 +1,1 @@
-export const getUserInfo = ({ login }) => login.user
+export const GET_USER_INFO = ({ login }) => login.user

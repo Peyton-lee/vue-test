@@ -15,6 +15,46 @@
 	@extend .radius-default;
 	background-color: $white;
 }
+.box-shadow {
+	box-shadow: 0 4px 20px 1px rgba(0,0,0,0.2);
+}
+
+// login out
+#loginOut {
+	color: $icon;
+	margin:14px 10px;
+	&:hover {
+		color: $active;
+	}
+	.setUp {
+		background-color: $white;
+		padding: 3px;
+		right: -20px;
+		top: 30px;
+		@extend .box-shadow;
+		li {
+			a {
+				color: $icon;
+			}
+			width: 70px;
+			padding: 5px 10px;
+			&:hover {
+				a {
+					color: $active;
+				}
+				background-color: $hoverBg;
+			}
+			&:last-child {
+				padding: 8px 10px;
+				text-align: center;
+				border-top: 1px solid $hoverBg;
+			}
+		}
+		.W_layer_top em {
+			left: 60px;
+		}
+	}
+}
 
 
 // collection
@@ -47,4 +87,34 @@
 			margin-bottom: 3px;
 		}
 	}
+}
+
+// amimates
+.fade-enter-active {
+  animation-name: fade-in;
+  animation-duration: .4s;
+}
+.fade-leave-active {
+  animation-name: fade-out;
+  animation-duration: .4s;
+}
+@keyframes fade-in {
+  0% {
+    transform: translate3d(0, 5px, 0);
+	opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+	opacity: 1;
+  }
+}
+@keyframes fade-out {
+  0% {
+    transform: translate3d(0, 0, 0);
+	opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 5px, 0);
+	opacity: 0;
+  }
 }
