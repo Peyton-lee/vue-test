@@ -5,3 +5,7 @@ export const LOGIN = ({ commit }, value) => {
 export const DECREMENT = ({ commit }) => {
     commit('DECREMENT')
 }
+
+export const SAVEINFO = ({commit}) => {
+    commit('SAVEINFO')
+}

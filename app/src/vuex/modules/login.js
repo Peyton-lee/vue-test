@@ -1,12 +1,14 @@
 const state = {
-    user: {
-        name: '李培彬'
-    }
+    user: {}
 }
 
 const mutations = {
-    LOGIN(state, value) {
+    LOGIN (state, value) {
         state.user.name = value
+    },
+    
+    SAVEINFO (state) {
+        state.user = {}
     }
 }
 

@@ -90,6 +90,31 @@
 }
 
 // amimates
+.opacity-enter-active {
+  animation-name: opacity-in;
+  animation-duration: .4s;
+}
+.opacity-leave-active {
+  animation-name: opacity-out;
+  animation-duration: .4s;
+}
+@keyframes opacity-in {
+  0% {
+	opacity: 0;
+  }
+  100% {
+	opacity: 1;
+  }
+}
+@keyframes opacity-out {
+  0% {
+	opacity: 1;
+  }
+  100% {
+	opacity: 0;
+  }
+}
+
 .fade-enter-active {
   animation-name: fade-in;
   animation-duration: .4s;

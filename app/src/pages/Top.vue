@@ -91,8 +91,13 @@ export default {
     },
     
     loginOut () {
+        this.saveInfo()
         this.$router.push({ path: '/login' })
-    }
+    },
+      
+    ...mapActions({
+        saveInfo: 'SAVEINFO'
+    })
   }
 }
 </script>
