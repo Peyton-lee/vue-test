@@ -1,14 +1,17 @@
 const state = {
-    user: {}
+    user: {},
+    isLogin: false
 }
 
 const mutations = {
     LOGIN (state, value) {
         state.user.name = value
+        state.isLogin = true
     },
     
-    SAVEINFO (state) {
+    LOGINOUT (state) {
         state.user = {}
+        state.isLogin = false
     }
 }
 

@@ -2,10 +2,10 @@
   <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-position="left" label-width="0px" class="demo-ruleForm login-container">
     <h3 class="title">LOGIN IN</h3>
     <el-form-item prop="account">
-      <el-input type="text" v-model="ruleForm.account" auto-complete="off" placeholder="账号" v-focus="focus"></el-input>
+      <el-input type="text" v-model="ruleForm.account" auto-complete="off" placeholder="账号" v-focus="focus"  @keyup.enter.native="login"></el-input>
     </el-form-item>
     <el-form-item prop="checkPass">
-      <el-input type="password" v-model="ruleForm.checkPass" auto-complete="off" placeholder="密码"></el-input>
+      <el-input type="password" v-model="ruleForm.checkPass" auto-complete="off" placeholder="密码" @keyup.enter.native="login"></el-input>
     </el-form-item>
     <el-checkbox v-model="checked" class="remember">记住密码</el-checkbox>
     <el-form-item style="width:100%;">
@@ -31,7 +31,6 @@
           account: [
             { required: true, message: '请输入账号', trigger: 'blur' },
           ],
-            
           checkPass: [
             { required: true, message: '请输入密码', trigger: 'blur' },
           ]
@@ -58,6 +57,16 @@
                     if (0 == response.data.code) {
                         this.loginAction(this.ruleForm.account)
                         this.$router.push({ path: '/index/default' })
+                    } else if (2 == response.data.code) {
+                        this.$notify.error({
+                            title: '错误',
+                            message: '账号不存在'
+                        })
+                    } else {
+                        this.$notify.error({
+                            title: '错误',
+                            message: '密码错误'
+                        })
                     }
                 } catch (err) {
                     if (err instanceof Error) {

@@ -1,14 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '../vuex/store'
+
 import Hello from '@/components/Hello'
 import Login from '@/components/Login'
 import Index from '@/pages/Index'
 import Default from '@/pages/Default'
 import Collection from '@/pages/Collection'
+import Praise from '@/pages/Praise'
+
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
     mode: 'history',
     linkActiveClass: 'on',
     routes: [
@@ -33,17 +37,12 @@ export default new Router({
             }, {
                 path: 'collection',
                 component: Collection
+            }, {
+                path: 'praise',
+                component: Praise
             }]
        }
    ],
-
-    beforeEach: transition => {
-        console.log(transition)
-        let vm = transition.to.router.app.$root
-        if (vm.isLogin) {
-            transition.next()
-        } else {}
-    },
 
     // 滚动条滚回顶部
     scrollBehavior(to, from, savedPosition) {
@@ -55,3 +54,19 @@ export default new Router({
         }
     }
 })
+
+router.beforeEach((to, from, next) => {
+    if (to.path == "/login") {
+        next()
+    } else {
+        // 判断是否登录
+        if (store.getters.CHECK_LOGIN)
+            next()
+        else
+            router.push({
+                path: '/login'
+            })
+    }
+})
+
+export default router

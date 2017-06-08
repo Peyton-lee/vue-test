@@ -15,15 +15,15 @@
          <!------------- 导航 start ------------->
          <div class="nav_box pull-right">
              <div class="nav_link pull-left">
-                 <a href="#" class="pull-left">
+                 <router-link to="/index/default" class="pull-left">
                      <i class="fa fa-home" aria-hidden="true"></i>首页
-                 </a>
-                 <a href="#" class="pull-left">
+                 </router-link>
+                 <router-link to="/index/viedo" class="pull-left">
                      <i class="fa fa-video-camera" aria-hidden="true"></i>视频
-                 </a>
-                 <a href="#" class="pull-left">
+                 </router-link>
+                 <router-link to="/index/find" class="pull-left">
                      <i class="fa fa-search-plus" aria-hidden="true"></i>发现
-                 </a>
+                 </router-link>
              </div>
              <div class="sign pull-left">
                  <div class="sign_up pull-left pointer">注册</div>
@@ -91,12 +91,12 @@ export default {
     },
     
     loginOut () {
-        this.saveInfo()
+        this.LOGINOUT()
         this.$router.push({ path: '/login' })
     },
       
     ...mapActions({
-        saveInfo: 'SAVEINFO'
+        LOGINOUT: 'LOGINOUT'
     })
   }
 }

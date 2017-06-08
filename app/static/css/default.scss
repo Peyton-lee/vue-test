@@ -73,10 +73,16 @@
 				label {
 					font-weight: bold;
 				}
+				em {
+					display: inline-block;
+				}
 				border-bottom: 2px solid $active;
 			}
 			label {
 				@extend .pointer;
+			}
+			em {
+				display: none;
 			}
 		}
 		margin-bottom: 10px;
@@ -84,8 +90,14 @@
 	.right_side {
 		.topicList li {
 			text-decoration: none;
-			margin-bottom: 3px;
 		}
+	}
+}
+
+// praise
+.praise {
+	.center_nav {
+		margin-top: 0;
 	}
 }
 

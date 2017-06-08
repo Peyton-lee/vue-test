@@ -194,7 +194,7 @@ ul li{
 }
 .publish{
     background-color: #fff;
-    padding: 10px;
+    padding: 5px 10px 10px;
 }
 #publish_body{
     width: 100%;
@@ -292,7 +292,7 @@ ul li{
 }
 .center_nav .nav_in_list li{
     list-style: none;
-    padding: 10px 10px 0;
+    padding: 9px 10px 0;
 }
 .center_nav .nav_in_list li p{
     background: #fff;

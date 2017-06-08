@@ -24,6 +24,7 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.15.2",
     "express-session": "^1.15.2",
-    "log-util": "^1.2.0"
+    "log-util": "^1.2.0",
+    "mongoose": "^4.10.5"
   }
 }

@@ -2,8 +2,8 @@
     <section class="collection">
        <div class="centerBox absolute">
             <header class="coll_header chuck_w">
-                <span class="coll_nav on"><label>我的收藏</label> (共15条)</span>
-                <span class="coll_nav"><label>热门收藏</label></span>
+                <span class="coll_nav" :class="{on: tabActive == 1}" @click="tabActive = 1"><label>我的收藏</label><em>(共15条)</em></span>
+                <span class="coll_nav" :class="{on: tabActive == 2}" @click="tabActive = 2"><label>热门收藏</label><em>(共15条)</em></span>
                 <div class="search_line pull-right relative">
                     <input type="text" placeholder="搜索收藏的微博">
                 </div>
@@ -20,6 +20,16 @@
                     </ul>
                 </div> 
             </div>
+            <div class="topicRank radius">
+                <div class="title relative"><b>微博意见反馈</b></div>
+                <div class="topicList">
+                    <ul>
+                        <li>欢迎使用微博并提出宝贵建议。请点击这里提交微博意见反馈。</li>
+                        <li><a href="">微博常见问题</a><br><a href="">微博客服专区</a></li>
+                        <li><a href="">全国人大常委会《关于加强网络信息保护的决定》</a></li>
+                    </ul>
+                </div> 
+            </div>
         </div>
     </section>
 </template>
@@ -28,10 +38,14 @@
 import CenterBody from './center_body/CenterBody'
     export default {
         data () {
-            return {}
+            return {
+                tabActive: 1
+            }
         },
         components: {
             CenterBody
-        }
+        },
+        
+        methods: {}
     }
 </script>
