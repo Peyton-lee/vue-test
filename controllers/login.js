@@ -1,5 +1,4 @@
-'use strict';
-
+'use strict'
 const loginModel = require('../models/login'),
     conf = require('../conf/conf')
 

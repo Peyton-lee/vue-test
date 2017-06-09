@@ -7,3 +7,6 @@ export const DECREMENT = ({ commit }) => {
 export const LOGINOUT = ({commit}) => {
     commit('LOGINOUT')
 }
+export const SHOW_SCROLL = ({commit}, bool) => {
+    commit('SHOW_SCROLL', bool)
+}

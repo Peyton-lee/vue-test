@@ -18,6 +18,235 @@
 .box-shadow {
 	box-shadow: 0 4px 20px 1px rgba(0,0,0,0.2);
 }
+.fixed {
+    position: fixed;
+}
+.icon_default {
+	@extend .pointer;
+	color: $icon;
+	&:hover {
+		color: $active;
+	}
+}
+
+.bubble {
+	float: left;
+	background: $text;
+	border: 1px solid #b7d4ef;
+	padding: 6px 9px;
+	max-width: 220px;
+	border-radius: 5px;
+	box-shadow: 0 3px 3px rgba(0,0,0,.05);
+	position: relative;
+	font-size: 12px;
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-width: 7px;
+		border-style: solid;
+		overflow: hidden;
+		font-size: 0;
+		line-height: 0;
+		vertical-align: top;
+		border-top-color: #d7ebfe;
+		color: #d7ebfe;
+		position: absolute;
+		border-width: 4px;
+		top: 6px;
+		right: -8px;    
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+	}
+	&.bulleLeft {
+		&:after {
+			border-left-color: transparent;
+			border-right-color: #d7ebfe;
+			left: -8px;
+		}
+	}
+}
+
+// index
+.main_content {
+	position: relative;
+	.scrollTip {
+		width: 40px;
+		height: 40px;
+		background-color: rgba(255,255,255,.4);
+		left: 50%;
+		margin-left: 510px;
+		bottom: 50px;
+		text-align: center;
+		color: $white;
+		line-height: 40px;
+		opacity: .8;
+	}
+	.chatSm {
+		bottom: 0;
+		right: 0;
+		height: 40px;
+		width: 288px;
+		background-color: $white;
+		opacity: .9;
+		box-shadow: -3px -2px 8px -1px rgba(0,0,0,0.2);
+        cursor: pointer;
+		.fold_icon {
+			color: $active;
+			margin: 9px 10px 9px 20px;
+		}
+		.wchat_btn {
+			@extend .block;
+			background-color: $active;
+			width: 38px;
+			height: 36px;
+			margin: 2px;
+			text-align: center;
+			line-height: 36px;
+			color: $white;
+			border-radius: 2px;
+			&:hover {
+				background-color: $activeDeep;
+			}
+		}
+	}
+	.chat_box {
+		bottom: 0;
+		right: 0;
+		z-index: 9999;
+		background-color: $white;
+		box-shadow: -3px -2px 8px -1px rgba(0,0,0,0.2);
+		.WB_Chat_Aside {
+			float: left;
+			width: 160px;
+			border-right: 1px solid $borderColor;
+			.search_top {
+				padding: 5px;
+				border-bottom: 1px solid $borderColor;
+				input {
+					height: 28px;
+					font-size: 12px;
+				}
+			}
+			.contact_list {
+				height: 320px;
+				li {
+					height: 30px;
+					line-height: 30px;
+					padding: 4px 7px 4px 4px;
+					clear: both;
+					.img {
+						float: left;
+						height: 30px;
+					}
+					.name {
+						margin-left: 10px;
+						max-width: 82px;
+					}
+					.close {
+						position: absolute;
+						right: 5px;
+						top: 0;
+						width: 16px;
+						height: 100%;
+						line-height: 38px;
+						text-align: center;
+						color: $icon;
+						opacity: 0;
+						&:hover {
+							color: $active;
+						}
+					}
+					&:hover,&.on {
+						background-color: $hoverBg;
+						.close {
+							opacity: 1;
+						}
+					}
+				}
+			}
+			.contact_bottom {
+				padding:8px 10px;
+				text-align: right;
+				border-top: 1px solid $hoverBg;
+				color: $icon;
+				.scope_list_box {
+					left: 30px;
+					top: -65px;
+					text-align: center;
+					font-size: 12px;
+				}
+			}
+		}
+		.WB_Chat_Content {
+			float: left;
+			width: 400px;
+			.chat_title {
+				padding: 0 10px;
+				color: #333;
+				height: 38px;
+				line-height: 38px;
+				border-bottom: 1px solid $borderColor;
+				.close {
+					right: 5px;
+					top: 0;
+					width: 30px;
+					height: 100%;
+					line-height: 38px;
+					text-align: center;
+				}
+			}
+			.chat_content {
+				height: 320px;
+				background-color: $hoverBg;
+				.null {
+					height: 100%;
+					line-height: 300px;
+					font-size: 40px;
+					color: #87c0da;
+				}
+				.bubble_mod_all {
+					.bubble_mod {
+						clear: both;
+						padding: 10px 10px 0 10px;
+						.img {
+							width: 30px;
+							float: left;
+							margin-right: 15px;
+						}
+						&.right {
+							.img,.bubble {
+								float: right;
+							}
+							.img {
+								margin-right: 0;
+								margin-left: 15px;
+							}
+						}
+					}
+				}
+			}
+			.chat_input {
+				height: 33px;
+				border-top: 1px solid $borderColor;
+				.chat_text_input {
+					width: 355px;
+					input {
+						height: 27px;
+						font-size: 12px;
+						margin: 3px;
+					}
+				}
+				#emotion_chat {
+					font-size: 20px;
+					color: $active;
+					margin: 5px 10px;
+				}
+			}
+		}
+	}
+}
 
 // login out
 #loginOut {

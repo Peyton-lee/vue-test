@@ -55,18 +55,18 @@ const router = new Router({
     }
 })
 
-router.beforeEach((to, from, next) => {
-    if (to.path == "/login") {
-        next()
-    } else {
-        // 判断是否登录
-        if (store.getters.CHECK_LOGIN)
-            next()
-        else
-            router.push({
-                path: '/login'
-            })
-    }
-})
+//router.beforeEach((to, from, next) => {
+//    if (to.path == "/login") {
+//        next()
+//    } else {
+//        // 判断是否登录
+//        if (store.getters.CHECK_LOGIN)
+//            next()
+//        else
+//            router.push({
+//                path: '/login'
+//            })
+//    }
+//})
 
 export default router

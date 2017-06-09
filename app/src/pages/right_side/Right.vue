@@ -38,6 +38,12 @@
           <a class="moreLink font-12 text-center" href="">查看更多  <i class="fa fa-angle-right" aria-hidden="true"></i></a>
       </div>
       <!------------- 个人信息 end ------------->
+      <div class="topicRank radius">
+          <div class="title relative"><b>广告</b></div>
+          <div class="topicList text-center">
+              <img src="http://wx1.sinaimg.cn/large/005MPofvly1fgdkfmhonqj305606yjrh.jpg" alt="">
+          </div>
+      </div>
       
       <!------------- 公告栏 start ------------->
       <div class="topicRank radius">

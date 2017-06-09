@@ -14,6 +14,7 @@ class LOGIN {
                 type: String
             }
         })
+        
         this.User = this.mongo.model('user', this.UserSchema)
     }
 
